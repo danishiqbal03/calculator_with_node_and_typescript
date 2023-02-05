@@ -1,0 +1,22 @@
+{
+  "name": "calculator_with_node_and_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danishiqbal03/calculator_with_node_and_typescript.git"
+  },
+  "author": "Danish Iqbal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danishiqbal03/calculator_with_node_and_typescript/issues"
+  },
+  "homepage": "https://github.com/danishiqbal03/calculator_with_node_and_typescript#readme",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}

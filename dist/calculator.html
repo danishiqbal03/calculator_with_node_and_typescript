@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator by Danish Iqbal</title>
+
+
+    <style>
+      .calculator {
+        width: 400px;
+        height: 500px;
+        margin: 0 auto;
+        background-color: rgb(20, 30, 51);
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-gap: 1px;
+      }
+      .calculator-display {
+        grid-column: 1 / -1;
+        background-color: rgb(93, 173, 238);
+        border: none;
+        text-align: right;
+        font-size: 36px;
+        padding-right: 40px;
+        margin-bottom: 10px;
+        height: 90px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .calculator-key {
+        
+        /* width: 70px; */
+        /* height: 70px; */
+        background-color: #fff;
+        border: 1px solid #ddd;
+        text-align: center;
+        line-height: 70px;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .calculator-key.operator {
+        background-color: #f2f2f2;
+      }
+
+      #equal {
+        grid-row: span 2;
+      }
+
+      #zero {
+        grid-column: span 2;
+      }
+
+      .calculator-display{
+        position: relative;
+      }
+
+      .calc_func{
+        display: none;
+        position: absolute;
+        right: 0px;
+        top: 0;
+        height: fit-content;
+        font-size: 14px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: yellowgreen;
+        padding: 2px;
+      }
+
+      @media (max-width: 420px) {
+        .calculator {
+          width: 100%;
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="calculator-display">
+        <div class="calc_func"></div>
+        <div class="calc_main">0</div>
+      </div>
+      <div id="clear_screen" class="calculator-key" data-action="clear">AC</div>
+      <div id="backspace" class="calculator-key" data-action="backspace">CE</div>
+      <div class="calculator-key operator" data-action="divide">&divide;</div>
+      <div class="calculator-key operator" data-action="times">&times;</div>
+      <div class="calculator-key">7</div>
+      <div class="calculator-key">8</div>
+      <div class="calculator-key">9</div>
+      <div class="calculator-key operator" data-action="add">+</div>
+      <div class="calculator-key">4</div>
+      <div class="calculator-key">5</div>
+      <div class="calculator-key">6</div>
+      <div class="calculator-key operator" data-action="minus">-</div>
+      <div class="calculator-key">1</div>
+      <div class="calculator-key">2</div>
+      <div class="calculator-key">3</div>
+      <div id="equal" class="calculator-key" data-action="equal">=</div>
+      <div id="zero" class="calculator-key">0</div>
+      <div class="calculator-key">.</div>
+      
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
