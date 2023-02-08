@@ -63,16 +63,18 @@ class Calculator {
         if(action && specialActions.indexOf(action) === -1){
             console.log("The action is: ", action)
             console.log("The action_rel is: ", action_obj[action])
-            if(this.operation_arr[this.operation_arr.length - 1] != action_obj[action] ){
+            if(!isNaN(parseFloat(this.operation_arr[this.operation_arr.length - 1]))){
+                console.log("this.operation_arr:", this.operation_arr);
+                console.log("this.operation_arr.length:", this.operation_arr.length);
+                console.log("action_obj[action]:", action_obj[action]);
                 this.operation_arr.push(action_obj[action]);
             }
-            
-
-            
+             
         } else if(!action) {
             console.log("The key is: ", key)
             this.operation_arr.push(key)
         }
+
         console.log("The Op Arr: ",this.operation_arr);
         if (!action) {
           this.display.textContent = displayedNum === '0' ? key : displayedNum + key;
@@ -85,7 +87,21 @@ class Calculator {
                 console.log("The Res: ",this.res);
                 this.operation_arr=[];
                 this.display.textContent = this.res.toString();
-            } else {
+            } 
+            else if(action == 'clear'){
+                if (this.operation_arr && this.operation_arr.length > 0) {
+                    this.operation_arr=[];
+                    this.display.textContent = '0';
+                }
+            } 
+            else if(action == 'backspace'){
+                if (this.operation_arr && this.operation_arr.length > 0) {
+                    this.operation_arr.pop();
+                    this.display.textContent = this.operation_arr.join('');
+                }
+
+            } 
+            else {
                 this.display.textContent = this.operation_arr.join('');
 
                 this.display_op.textContent = action;
